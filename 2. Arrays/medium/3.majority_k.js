@@ -19,7 +19,7 @@
 // Explanation: The number 1 appears 4 times in the 6 sized array
 
 
-
+const nums = [1, 1, 1, 2, 1, 2]
 var majorityElement = function(nums) {
     let candidate = null;
     let count = 0;
