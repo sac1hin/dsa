@@ -1,0 +1,193 @@
+1. Is the input array/string SORTED?
+   ├─ Yes
+   │   ├─ Looking for PAIR/TRIPLET with sum/condition?
+   │   │     → Two Pointers (Opposite Ends)
+   │   ├─ Need to MERGE two arrays/lists?
+   │   │     → Two Pointers (Same Direction)
+   │   ├─ Need MIN/MAX/OPTIMAL choice (intervals, stock)?
+   │   │     → Greedy
+   │   └─ Otherwise
+   │         → Binary Search / Greedy
+   │
+   └─ No
+       ├─ Looking for SUBARRAY/SUBSTRING with condition?
+       │   ├─ Fixed size k?
+       │   │     → Sliding Window (Fixed)
+       │   ├─ Variable size (expand/contract)?
+       │   │     → Sliding Window (Dynamic)
+       │   ├─ Sum/XOR/0?
+       │   │     → Prefix Sum / Prefix XOR + HashMap
+       │   └─ Max subarray sum/product?
+       │         → Kadane / DP
+       │
+       ├─ Need to COUNT inversions, reverse pairs, or sort?
+       │     → Divide & Conquer (Merge Sort family)
+       │
+       ├─ Need UNIQUE or PARITY check (e.g., single number)?
+       │     → Bitwise XOR
+       │
+       ├─ Need to GENERATE permutations/subsets?
+       │     → Backtracking / Recursion / Bitmask
+       │
+       ├─ Working on MATRICES?
+       │   ├─ Rotate/Transpose/Spiral?
+       │   │     → Matrix tricks
+       │   └─ Zeroing rows/cols?
+       │         → Markers or Set
+       │
+       └─ If problem asks OPTIMAL / MAX/MIN with greedy choices:
+             → Try Greedy
+
+
+
+
+🔹 Two Pointers
+    Same Direction (left & right both move forward)
+
+    👉 when to use:
+
+    You need to scan/compare elements in a sorted array or string.
+
+    Removing duplicates, merging two sorted lists, fast/slow pointer problems.
+
+    ✅ examples
+
+    Remove duplicates from sorted array
+
+    Merge two sorted arrays/lists
+
+    Detect cycle in linked list (fast/slow)
+
+    Opposite Ends (left = 0, right = n-1, move inward)
+
+    👉 when to use:
+
+    Looking for pairs/triplets that satisfy a condition (usually sum).
+
+    Array/string is sorted or can be sorted.
+
+    ✅ examples
+
+    Two Sum (sorted array)
+
+    3Sum / 4Sum
+
+    Trapping rain water
+
+
+🔹 Sliding Window
+
+    👉 when to use:
+
+    Need info about subarrays/substrings of contiguous elements.
+
+    Window expands/contracts based on condition.
+
+    “Longest/shortest substring/subarray with property …”
+
+    ✅ examples
+
+    Longest substring without repeating chars
+
+    Maximum sum subarray of size k
+
+    Minimum window substring
+
+
+
+🔹 Prefix Sum / Prefix XOR
+
+    👉 when to use:
+
+    Need to answer range queries quickly (sum/XOR in O(1) after preprocessing).
+
+    Subarray with sum = k / XOR = k.
+
+    “Largest/Count subarray with sum/xor condition.”
+
+    ✅ examples
+
+    Subarray sum equals k
+
+    Count subarray with given XOR
+
+    Largest subarray with 0 sum
+
+
+
+🔹 Divide & Conquer
+
+    👉 when to use:
+
+    Problem breaks naturally into smaller subproblems (left/right halves).
+
+    Sorting, counting, range conditions.
+
+    Common when brute force O(n²) can be cut to O(n log n).
+
+    ✅ examples
+
+    Merge sort, Quick sort
+
+    Count inversions
+
+    Reverse pairs problem
+
+    Binary search (divide search space)
+
+
+🔹 Bitwise
+
+    👉 when to use:
+
+    Problem deals with parity, presence, unique elements.
+
+    Numbers appear k times except one.
+
+    XOR cancels duplicates, AND/OR/masks check bits.
+
+    ✅ examples
+
+    Single number (all appear twice except one)
+
+    Find missing & repeating element
+
+    Subsets generation using bits
+
+
+
+🔹 Greedy
+
+    👉 when to use:
+
+    Problem can be solved by local optimal choices that lead to global optimal.
+
+    Usually sorting + picking best at each step.
+
+    Interval scheduling, stock buy/sell, coin change (if canonical).
+
+    ✅ examples
+
+    Activity selection / Merge intervals
+
+    Minimum platforms (trains problem)
+
+    Best time to buy/sell stock once
+
+    Huffman coding
+
+
+
+⚡ Quick heuristic for interviews:
+
+    If array is sorted → think two pointers / binary search / greedy.
+
+    If array is unsorted but asking subarray → think prefix sum / sliding window.
+
+    If array is unsorted but asking counts → think hashmap / prefix sum/XOR.
+
+    If question asks about pairs, inversions, range comparisons → think divide & conquer.
+
+    If question mentions bits, XOR, unique elements → think bitwise.
+
+    If optimization + “at most once” / “minimum steps” → check greedy.
