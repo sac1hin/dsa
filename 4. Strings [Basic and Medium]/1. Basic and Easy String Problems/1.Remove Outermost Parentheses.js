@@ -10,3 +10,26 @@
 // Given a valid parentheses string s, your task is to remove the outermost parentheses from every primitive component of s and return the resulting string.
 
 
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function (s) {
+    let count = 0;
+    let str = ""
+    for (let i of s) {
+        if (i === "(") {
+            count++;
+            if (count > 1) {
+                str += i;
+            }
+        } else {
+            count--;
+            if (count >= 1) {
+                str += i;
+            }
+        }
+    }
+
+    return str;
+};
