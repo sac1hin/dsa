@@ -1,3 +1,5 @@
+// gfg -> https://www.geeksforgeeks.org/problems/minimize-max-distance-to-gas-station/1
+
 // Given a sorted array arr of size n, containing integer positions of n gas stations on the X-axis, and an integer k, place k new gas stations on the X-axis.
 
 // The new gas stations can be placed anywhere on the non-negative side of the X-axis, including non-integer positions.
